@@ -103,14 +103,34 @@ window.addEventListener("scroll", (e) => {
 });
 
 
-function myFunction() {
-    // var popup = document.getElementById("myPopup");
-    var elements = document.getElementsByClassName("post-start-prompt")
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.display = "none";
-    }
-    var entrybox = document.getElementById("post-enter-prompt");
-    entrybox.style.display = "block";
+// function myFunction() {
+//     // var popup = document.getElementById("myPopup");
+//     var elements = document.getElementsByClassName("post-start-prompt")
+//     for (var i = 0; i < elements.length; i++) {
+//         elements[i].style.display = "none";
+//     }
+//     var elements = document.getElementsByClassName("post-enter-prompt");
+//     for (var i = 0; i < elements.length; i++) {
+//         elements[i].style.display = "block";
+//     }
+// }
+
+// function myFunction() {
+//     var btnBox = document.getElementById("button-box");
+//     btnBox.style.display = "none";
+
+//     var inputBox = document.getElementById("input-box")
+//     inputBox.style.display = "block";
+// }
+function doConfirm(msg, yesFn, noFn) {
+    var confirmBox = $("#confirmBox");
+    // confirmBox.find(".message").text(msg);
+    confirmBox.find(".yes,.no").unbind().click(function () {
+        // confirmBox.hide();
+    });
+    confirmBox.find(".yes").click(yesFn);
+    confirmBox.find(".no").click(noFn);
+    confirmBox.show();
 }
 
 waitPageLoading();

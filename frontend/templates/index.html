@@ -11,6 +11,39 @@
 
         <script src="../static/js/script.js"></script>
         <script src="https://kit.fontawesome.com/3055f91a99.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#askin-link").click(function (e) {
+                    e.preventDefault();
+                    var form = this;
+                    doConfirm("Are you sure?", function yes() {
+                        var output = $.post("http://localhost:5000/gpt3", function() {
+                            // alert( "success" );
+                        })
+                        .done(function(data) {
+                            // alert( data);
+                            $("#gpt3-query").slideToggle("slow");
+                            $("#gpt3-response").text(data).slideToggle("slow");
+                            $("#proceed-btn").hide();
+                        })
+                        .fail(function() {
+                            // alert( "error" );
+                            $("#gpt3-query").slideToggle("slow");
+                            $("#gpt3-response").text("No response received!").slideToggle("slow");
+                            $("#proceed-btn").hide();
+                        })
+                        .always(function() {
+                            // alert( "finished" );
+                        });
+                        
+                        // alert("Yo!");
+                    }, function no() {
+                        // do nothing
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <!-- HEADER -->
@@ -274,15 +307,11 @@
             <div id="main-wrapper">
                 <main id="main-section">
                     <div id="share-box">
-                        <div id="button-box">
+                        <div id="button-box" class="post-start-prompt">
                             <button id="btn-post">
                                 <span class="fas fa-edit post-start-prompt"></span>
                                 <span id="btn-text" class="post-start-prompt" onclick="myFunction()">Start a post</span>
                             </button>
-                            <input id="post-enter-prompt"
-                                type="text"
-                                placeholder="Write something on LinkedIn"
-                            />
                             <button id="btn-picture">
                                 <span class="fas fa-camera"></span>
                             </button>
@@ -293,9 +322,15 @@
                                 <span class="fas fa-file"></span>
                             </button>
                         </div>
+                        <div id="confirmBox">
+                            <textarea rows="8" cols="57" id="gpt3-query">How can we help you?</textarea>
+                            <div class="message" id="gpt3-response">This is random text</div>
+                            <span class="button yes" id="proceed-btn">Proceed!</span>
+                            <!-- <span class="button no">Cancel</span> -->
+                        </div>
                         <div id="link-box">
-                            <a href="#">Write an article</a>
-                            <span>on LinkedIn</span>
+                            <a href="#" id="askin-link">What are you AskIn?</a>
+                            <!-- <span>on LinkedIn</span> -->
                     </div>
                     <div id="feed-sort">
                         <hr />

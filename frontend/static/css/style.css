@@ -657,6 +657,16 @@ main#main-section div#share-box div#button-box {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+main#main-section div#share-box div#input-box {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+main#main-section div#share-box div#input-box textarea {
+    resize: none;
+}
+
 main#main-section div#share-box div#button-box .fas {
     font-size: 18px;
 }
@@ -1467,13 +1477,50 @@ div#dot-loader {
     background: transparent !important;
 }
 
-#post-enter-prompt {
+.post-enter-prompt {
     position: absolute;
     background: #ffffff;
     color: #0084bf;
     border-radius: 0px;
     display: none;
     text-align: left;
-    height: 26px;
-    width: 100px;
+    padding: 26px, 100px;
+}
+
+#confirmBox
+{
+   display:none;
+    background-color: #fff;
+    border-radius: 0px;
+    border: 2px solid #0073b1;
+    position: fixed;
+    width: 550px;
+    padding: 6px 8px 8px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#confirmBox textarea {
+    resize: none;
+}
+
+#confirmBox .button {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 2px;
+    border: 2px solid #0073b1;
+    padding: 2px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+}
+#confirmBox .button:hover
+{
+    background-color: #0073b1;
+}
+#confirmBox .message
+{
+    text-align: center;
+    margin-bottom: 8px;
+    display: none;
 }
