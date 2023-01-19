@@ -18,7 +18,9 @@
                     e.preventDefault();
                     var form = this;
                     doConfirm("Are you sure?", function yes() {
-                        var output = $.post("http://localhost:5000/gpt3", function() {
+                        var myData = $("#gpt3-query").val();
+                        alert(myData);
+                        var output = $.post("http://localhost:5000/gpt3", data={'data': myData}, function() {
                             // alert( "success" );
                         })
                         .done(function(data) {

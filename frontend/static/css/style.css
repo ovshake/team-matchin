@@ -1498,6 +1498,7 @@ div#dot-loader {
     padding: 6px 8px 8px;
     box-sizing: border-box;
     text-align: center;
+    box-shadow: #010202;
 }
 
 #confirmBox textarea {
