@@ -19,7 +19,7 @@
                     var form = this;
                     doConfirm("Are you sure?", function yes() {
                         var myData = $("#gpt3-query").val();
-                        alert(myData);
+                        // alert(myData);
                         var output = $.post("http://localhost:5000/gpt3", data={'data': myData}, function() {
                             // alert( "success" );
                         })
@@ -331,7 +331,8 @@
                             <!-- <span class="button no">Cancel</span> -->
                         </div>
                         <div id="link-box">
-                            <a href="#" id="askin-link">What are you AskIn?</a>
+                            No-more scrolling, use
+                            <a href="#" id="askin-link">Match[In]</a>
                             <!-- <span>on LinkedIn</span> -->
                     </div>
                     <div id="feed-sort">

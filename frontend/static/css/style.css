@@ -717,14 +717,19 @@ main#main-section div#share-box div#button-box button#btn-document:hover {
 
 main#main-section div#link-box {
     padding: 13px 16px;
-    background: #f3f6f8;
+    background: #2d7eb4;
     font-size: 14px;
+    color:rgba(255, 255, 255, 1)
 }
 
 main#main-section div#link-box a {
     color: #0073b1;
     font-weight: bold;
     padding-right: 1px;
+}
+
+main#main-section div#link-box a {
+    color:rgba(255, 215, 0, 1)
 }
 
 main#main-section div#link-box a:hover {
